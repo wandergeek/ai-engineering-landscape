@@ -10,7 +10,7 @@
 
 <body>
     <div class="container-fluid mt-5">
-        <div class="sticky">
+        <div class="sticky mb-3">
             <h1 class="mb-4 text-center">AI Engineering Landscape</h1>
 
             <div class="row mb-3">
@@ -60,13 +60,19 @@
                     }
                     acc[tag].push(resource);
                 });
-                return acc;
+                // Sort acc by the number of resources in each category
+                return Object.fromEntries(
+                    Object.entries(acc).sort(([, a], [, b]) => b.length - a.length)
+                );
+                
             }, {});
             // Render categories and resources
             Object.entries(categorizedResources).forEach(([tag, tagResources]) => {
                 const tagBox = document.createElement('div');
                 tagBox.className = 'tag-box';
-                tagBox.dataset.tag = tag;
+                // Dynamic tag data attribute will bu used for css styling
+                // data-tag attribute is the order of the tag in the list
+                tagBox.dataset.tag = 'tag-' + Object.keys(categorizedResources).indexOf(tag);
 
                 const tagTitle = document.createElement('div');
                 tagTitle.className = 'tag-title';
@@ -124,9 +130,11 @@
                 // Licensing
                 const licensingCell = document.createElement('td');
                 const licensingBadge = document.createElement('span');
-                licensingBadge.className = `badge licensing-badge licensing-${resource.licensing.toLowerCase().replace(' ', '-')}`;
-                licensingBadge.textContent = resource.licensing;
-                licensingCell.appendChild(licensingBadge);
+                resource.licensing.forEach(licensing => {
+                    licensingBadge.className = `badge licensing-badge licensing-${licensing.toLowerCase().replace(' ', '-')}`;
+                    licensingBadge.textContent = licensing;
+                    licensingCell.appendChild(licensingBadge);
+                });
                 row.appendChild(licensingCell);
 
                 // Link
@@ -171,8 +179,9 @@
                 resource.name.toLowerCase().includes(searchTerm) ||
                 resource.description.toLowerCase().includes(searchTerm) ||
                 resource.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
-                resource.licensing.toLowerCase().includes(searchTerm)
+                resource.licensing.some(licensing => licensing.toLowerCase().includes(searchTerm))
             );
+            renderResourceLandscape(filteredResources);
             renderResources(filteredResources);
         });
 

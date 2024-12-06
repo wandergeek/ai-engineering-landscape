@@ -6,6 +6,17 @@ body {
     background-color: #f4f4f4;
 }
 
+ :root {
+    --tag-color-1: #3498db;
+    --tag-color-2: #2ecc71;
+    --tag-color-3: #e74c3c;
+    --tag-color-4: #f39c12;
+    --tag-color-5: #9b59b6;
+    --tag-color-6: #34495e;
+    --tag-color-7: #16a085;
+    --tag-color-8: #27ae60;
+    --tag-color-9: #2980b9;
+
 .sticky {
     background-color: #f4f4f4;
     position: sticky;
@@ -79,43 +90,75 @@ body {
     font-weight: 500;
 }
 
-/* Explicit tag border colors */
-.tag-box[data-tag="agents"] {
-    border-color: #3498db;
+/* Dynamic tag colors */
+.tag-box[data-tag="tag-1"] {
+    border-color: var(--tag-color-1);
 
     .tag-title {
-        border-bottom-color: #3498db;
+        border-bottom-color: var(--tag-color-1);
     }
 }
 
-.tag-box[data-tag="Frameworks"] {
-    border-color: #2ecc71;
+.tag-box[data-tag="tag-2"] {
+    border-color: var(--tag-color-2);
 
     .tag-title {
-        border-bottom-color: #2ecc71;
+        border-bottom-color: var(--tag-color-2);
     }
 }
 
-.tag-box[data-tag="Learning"] {
-    border-color: #e74c3c;
+.tag-box[data-tag="tag-3"] {
+    border-color: var(--tag-color-3);
 
     .tag-title {
-        border-bottom-color: #e74c3c;
+        border-bottom-color: var(--tag-color-3);
     }
 }
 
-.tag-box[data-tag="Platforms"] {
-    border-color: #f39c12;
+.tag-box[data-tag="tag-4"] {
+    border-color: var(--tag-color-4);
 
     .tag-title {
-        border-bottom-color: #f39c12;
+        border-bottom-color: var(--tag-color-4);
     }
 }
 
-.tag-box[data-tag="Research"] {
-    border-color: #9b59b6;
+.tag-box[data-tag="tag-5"] {
+    border-color: var(--tag-color-5);
 
     .tag-title {
-        border-bottom-color: #9b59b6;
+        border-bottom-color: var(--tag-color-5);
+    }
+}
+
+.tag-box[data-tag="tag-6"] {
+    border-color: var(--tag-color-6);
+
+    .tag-title {
+        border-bottom-color: var(--tag-color-6);
+    }
+}
+
+.tag-box[data-tag="tag-7"] {
+    border-color: var(--tag-color-7);
+
+    .tag-title {
+        border-bottom-color: var(--tag-color-7);
+    }
+}
+
+.tag-box[data-tag="tag-8"] {
+    border-color: var(--tag-color-8);
+
+    .tag-title {
+        border-bottom-color: var(--tag-color-8);
+    }
+}
+
+.tag-box[data-tag="tag-9"] {
+    border-color: var(--tag-color-9);
+
+    .tag-title {
+        border-bottom-color: var(--tag-color-9);
     }
 }
