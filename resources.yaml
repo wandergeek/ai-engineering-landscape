@@ -1,0 +1,203 @@
+resources:
+  - name: "AutoGen"
+    description: "Framework by Microsoft for building LLM applications based on multi-agent conversations"
+    link: "https://github.com/microsoft/autogen"
+    licensing: "open-source"
+    tags:
+      - agents
+      - multi-agent
+    usefullinks:
+
+  - name: "AutoGPT"
+    description: "Open source AI agent project. Given a goal, the agent will decompose it into actionable subtasks and utilize given resources to accomplish them"
+    link: "https://github.com/Significant-Gravitas/AutoGPT"
+    licensing: "open-source"
+    tags:
+      - agents
+      - AI
+    usefullinks:
+
+  - name: "DSPy"
+    description: "Framework for algorithmically optimizing LLM prompts"
+    link: "https://github.com/stanfordnlp/dspy"
+    licensing: "open-source"
+    tags:
+      - prompt generation
+      - RAG
+    usefullinks:
+
+  - name: "Guardrails"
+    description: "Framework to run input and output guards in your application that detect, quantify, and mitigate the presence of specific types of risks"
+    link: "https://github.com/ShreyaR/guardrails"
+    licensing: "open-source"
+    tags:
+      - guardrails
+      - security
+    usefullinks:
+      - hub: "https://hub.guardrailsai.com/"
+    
+
+  - name: "Hugging Face"
+    description: "An ML and data science collaborative platform. Users can find and contribute to models, datasets, and applications"
+    link: "https://huggingface.co"
+    licensing: "freemium"
+    tags:
+      - ML
+      - community
+    usefullinks:
+
+  - name: "LangChain"
+    description: "Framework to help in LLM-based application development. Provides an abstraction layer to interact with LLMs better, with prompt templating, chaining, RAG tools, agent implementation, and more"
+    link: "https://github.com/langchain-ai/langchain"
+    licensing: "open-source"
+    tags:
+      - agents
+      - RAG
+    usefullinks:
+
+
+  - name: "LangChain4j"
+    description: "Alternate frameworks for LLM-based applications for developers who prefer Java inspired by LangChain"
+    link: "https://github.com/langchain4j/langchain4j"
+    licensing: "open-source"
+    tags:
+      - Java
+    usefullinks:
+
+  - name: "LangChain4j/LangChainGo"
+    description: "Alternate frameworks for LLM-based applications for developers who prefer Go, inspired by LangChain"
+    link: "https://github.com/tmc/langchaingo"
+    licensing: "open-source"
+    tags:
+      - Go
+    usefullinks:
+
+
+  - name: "Langfuse"
+    description: "Open source solution dedicated to prompt management, and LLM-based application monitoring. Integrates a UI"
+    link: "https://github.com/langfuse/langfuse"
+    licensing: "open-source"
+    tags:
+      - testing
+      - prompt management
+      - observability
+      - usage monitoring
+    usefullinks:
+
+
+  - name: "LangSmith"
+    description: "Platform similar to a DevOps platform for LLMs, spawned from LangChain. Allows collaboration between developers, and testing and monitoring of LLM powered applications"
+    link: "https://www.langchain.com/langsmith"
+    licensing: "commercial"
+    tags:
+      - testing
+      - observability
+      - collaboration platform
+      - usage monitoring
+    usefullinks:
+
+
+  - name: "LlamaIndex"
+    description: "Framework designed to support LLM-based application development, specifically for integrating data from various data sources"
+    link: "https://github.com/run-llama/llama_index"
+    licensing: "open-source"
+    tags:
+      - RAG
+      - agents
+    usefullinks:
+
+
+  - name: "LMSYS Chatbot Arena Leaderboard"
+    description: "Crowdsourced leaderboard for LLMs. Provides an open platform dedicated to LLM ranking"
+    link: "https://chat.lmsys.org/"
+    licensing: "open-source"
+    tags:
+      - evaluation
+      - LLM
+      - benchmarking
+    usefullinks:
+
+
+  - name: "MLflow"
+    description: "Open source MLOps platform, widespread in ML projects. Has recently added features dedicated to LLMs"
+    link: "https://github.com/mlflow/mlflow"
+    licensing: "open-source"
+    tags:
+      - ML lifecycle
+      - collaboration platform
+    usefullinks:
+
+
+  - name: "NeMo Guardrails"
+    description: "Toolkit provided by NVIDIA for guardrails to LLM-based conversational applications, controlling the output of LLMs"
+    link: "https://github.com/NVIDIA/NeMo-Guardrails"
+    licensing: "open-source"
+    tags:
+      - guardrails
+      - hallucinations
+      - security
+    usefullinks:
+
+
+  - name: "OpenAI evals"
+    description: "Framework for evaluating LLM-based applications. OpenAI provides a detailed cookbook to get you started"
+    link: "https://github.com/openai/evals"
+    licensing: "open-source"
+    tags:
+      - evaluation
+      - LLM
+    usefullinks:
+
+
+  - name: "promptfoo"
+    description: "Tool to test and evaluate prompts, models, and RAG outputs. Works either in command line or with a detailed user interface"
+    link: "https://github.com/promptfoo/promptfoo"
+    licensing: "open-source"
+    tags:
+      - prompt engineering
+      - evaluation
+      - testing
+    usefullinks:
+
+
+  - name: "Ragas"
+    description: "Framework dedicated to the evaluation of RAG pipelines. Can also be used for monitoring solutions in production"
+    link: "https://github.com/explodinggradients/ragas"
+    licensing: "open-source"
+    tags:
+      - RAG
+      - evaluation
+      - monitoring
+      - observability
+    usefullinks:
+
+
+  - name: "SpringAI"
+    description: "Alternate framework for LLM-based applications for Java developers"
+    link: "https://github.com/spring-projects/spring-ai"
+    licensing: "open-source"
+    tags:
+      - Java
+    usefullinks:
+
+
+  - name: "tiktoken"
+    description: "Library integrating a tokenizer for OpenAI models. Can be used to monitor costs and usage manually"
+    link: "https://github.com/openai/tiktoken"
+    licensing: "open-source"
+    tags:
+      - usage and cost monitoring
+      - tokenization
+    usefullinks:
+
+
+  - name: "Weights & Biases (W&B)"
+    description: "Platform dedicated to experiment tracking, model training, fine-tuning, and collaboration, with solutions to help LLM application development"
+    link: "https://wandb.ai"
+    licensing: "freemium"
+    tags:
+      - ML lifecycle
+      - collaboration platform
+      - experiment tracking
+    usefullinks:
+
