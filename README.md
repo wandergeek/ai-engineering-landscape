@@ -1,6 +1,7 @@
-# Resource Repository
+# AI Engineering Landscape
 
-This repository maintains a curated list of resources for AI Engineering
+This repository maintains a curated list of resources for AI Engineering.
+It is deployed [here](https://malywut.github.io/ai-engineering-landscape/).
 
 ## Contributing Resources
 
