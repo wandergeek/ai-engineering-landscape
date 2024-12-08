@@ -1,216 +1,341 @@
 resources:
   - name: "AutoGen"
     description: "Framework by Microsoft for building LLM applications based on multi-agent conversations"
-    link: "https://github.com/microsoft/autogen"
+    links:
+      - github: "https://github.com/microsoft/autogen"
+      - website: "https://autogen.microsoft.com"
     licensing:
       - "open-source"
     tags:
       - agents
-    usefullinks:
+    logo: https://microsoft.github.io/autogen/0.2/img/ag.svg
 
   - name: "AutoGPT"
     description: "Open source AI agent project. Given a goal, the agent will decompose it into actionable subtasks and utilize given resources to accomplish them"
-    link: "https://github.com/Significant-Gravitas/AutoGPT"
+    links:
+      - github: "https://github.com/Significant-Gravitas/AutoGPT"
     licensing:
       - "open-source"
     tags:
       - agents
-    usefullinks:
+    logo: https://autogpt.net/wp-content/uploads/2023/04/autogpt_logo.png
 
   - name: "DSPy"
     description: "Framework for algorithmically optimizing LLM prompts"
-    link: "https://github.com/stanfordnlp/dspy"
+    links:
+      - github: "https://github.com/stanfordnlp/dspy"
     licensing:
       - "open-source"
     tags:
       - prompt engineering
       - RAG
-    usefullinks:
+    logo: https://github.com/stanfordnlp/dspy/raw/main/docs/docs/static/img/dspy_logo.png
 
-  - name: "Guardrails"
+  - name: "Guardrails AI"
     description: "Framework to run input and output guards in your application that detect, quantify, and mitigate the presence of specific types of risks"
-    link: "https://github.com/ShreyaR/guardrails"
+    links:
+      - github: "https://github.com/ShreyaR/guardrails"
+      - hub: "https://hub.guardrailsai.com/"
     licensing:
       - "open-source"
     tags:
       - guardrails/security
-    usefullinks:
-      - hub: "https://hub.guardrailsai.com/"
+    logo: https://hub.guardrailsai.com/guardrails-logo-icon.svg
 
   - name: "Hugging Face"
     description: "An ML and data science collaborative platform. Users can find and contribute to models, datasets, and applications"
-    link: "https://huggingface.co"
+    links:
+      - website: "https://huggingface.co"
     licensing:
       - "open-source"
     tags:
-      - LLM
-    usefullinks:
+      - Other
+    logo: https://huggingface.co/front/assets/huggingface_logo.svg
 
   - name: "LangChain"
     description: "Framework to help in LLM-based application development. Provides an abstraction layer to interact with LLMs better, with prompt templating, chaining, RAG tools, agent implementation, and more"
-    link: "https://github.com/langchain-ai/langchain"
+    links:
+      - github: "https://github.com/langchain-ai/langchain"
     licensing:
       - "open-source"
     tags:
       - agents
       - RAG
-    usefullinks:
+    logo: https://python.langchain.com/img/brand/wordmark.png
 
   - name: "LangChain4j"
     description: "Alternate frameworks for LLM-based applications for developers who prefer Java inspired by LangChain"
-    link: "https://github.com/langchain4j/langchain4j"
+    links:
+      - github: "https://github.com/langchain4j/langchain4j"
     licensing:
       - "open-source"
     tags:
       - alternative languages
       - RAG
-    usefullinks:
+    logo: https://avatars.githubusercontent.com/u/132277850?v=4
+
+  - name: "LangGraph"
+    description: "Orchestration framework for complex agentic systems"
+    links:
+      - github: "https://github.com/langchain-ai/langgraph"
+      - website: "https://www.langchain.com/langgraph"
+    licensing:
+      - "open-source"
+      - "commercial"
+    tags:
+      - agents
+      - platform
+    logo: https://langchain-ai.github.io/langgraph/static/wordmark_dark.svg
 
   - name: "LangChainGo"
     description: "Alternate frameworks for LLM-based applications for developers who prefer Go, inspired by LangChain"
-    link: "https://github.com/tmc/langchaingo"
+    links:
+      - github: "https://github.com/tmc/langchaingo"
     licensing:
       - "open-source"
     tags:
       - alternative languages
       - RAG
-    usefullinks:
+    logo:
 
   - name: "Langfuse"
     description: "Open source solution dedicated to prompt management, and LLM-based application monitoring. Integrates a UI"
-    link: "https://github.com/langfuse/langfuse"
+    links:
+      - github: "https://github.com/langfuse/langfuse"
     licensing:
       - "open-source"
     tags:
       - observability
       - LLMOps
-    usefullinks:
+    logo: https://langfuse.com/langfuse_logo.png
 
   - name: "LangSmith"
     description: "Platform similar to a DevOps platform for LLMs, spawned from LangChain. Allows collaboration between developers, and testing and monitoring of LLM powered applications"
-    link: "https://www.langchain.com/langsmith"
-    licensing: 
-     - "commercial"
+    links:
+      - website: "https://www.langchain.com/langsmith"
+    licensing:
+      - "commercial"
     tags:
       - observability
       - platform
       - LLMOps
-    usefullinks:
+    logo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRejzbKjev2a8d-EKtUU06p84fh5NX_S7dDLA&s
 
   - name: "LlamaIndex"
     description: "Framework designed to support LLM-based application development, specifically for integrating data from various data sources"
-    link: "https://github.com/run-llama/llama_index"
+    links:
+      - github: "https://github.com/run-llama/llama_index"
     licensing:
       - "open-source"
     tags:
       - RAG
       - agents
-    usefullinks:
+    logo: https://www.llamaindex.ai/llamaindex.svg
 
-  - name: "LMSYS Chatbot Arena Leaderboard"
+  - name: "Chatbot Arena Leaderboard"
     description: "Crowdsourced leaderboard for LLMs. Provides an open platform dedicated to LLM ranking"
-    link: "https://chat.lmsys.org/"
+    links:
+      - website: "https://lmarena.ai/"
     licensing:
       - "open-source"
     tags:
-      - LLM
-    usefullinks:
+      - Other
+    logo:
 
   - name: "MLflow"
     description: "Open source MLOps platform, widespread in ML projects. Has recently added features dedicated to LLMs"
-    link: "https://github.com/mlflow/mlflow"
+    links:
+      - github: "https://github.com/mlflow/mlflow"
     licensing:
       - "open-source"
     tags:
       - LLMOps
       - platform
-    usefullinks:
+    logo: https://mlflow.org/docs/latest/_static/MLflow-logo-final-black.png
 
   - name: "NeMo Guardrails"
     description: "Toolkit provided by NVIDIA for guardrails to LLM-based conversational applications, controlling the output of LLMs"
-    link: "https://github.com/NVIDIA/NeMo-Guardrails"
+    links:
+      - github: "https://github.com/NVIDIA/NeMo-Guardrails"
     licensing:
       - "open-source"
     tags:
       - guardrails/security
-    usefullinks:
+    logo: https://upload.wikimedia.org/wikipedia/sco/thumb/2/21/Nvidia_logo.svg/1280px-Nvidia_logo.svg.png
 
   - name: "OpenAI evals"
     description: "Framework for evaluating LLM-based applications. OpenAI provides a detailed cookbook to get you started"
-    link: "https://github.com/openai/evals"
+    links:
+      - github: "https://github.com/openai/evals"
     licensing:
       - "open-source"
     tags:
       - observability
-    usefullinks:
+    logo: https://openai.com/favicon.ico
 
   - name: "promptfoo"
     description: "Tool to test and evaluate prompts, models, and RAG outputs. Works either in command line or with a detailed user interface"
-    link: "https://github.com/promptfoo/promptfoo"
+    links:
+      - github: "https://github.com/promptfoo/promptfoo"
     licensing:
       - "open-source"
     tags:
       - prompt engineering
       - observability
-    usefullinks:
+    logo: https://www.promptfoo.dev/favicon.ico
 
   - name: "Ragas"
     description: "Framework dedicated to the evaluation of RAG pipelines. Can also be used for monitoring solutions in production"
-    link: "https://github.com/explodinggradients/ragas"
+    links:
+      - github: "https://github.com/explodinggradients/ragas"
     licensing:
       - "open-source"
     tags:
       - RAG
       - observability
-    usefullinks:
+    logo: https://docs.ragas.io/en/stable/_static/imgs/ragas-logo.png
 
   - name: "SpringAI"
     description: "Alternate framework for LLM-based applications for Java developers"
-    link: "https://github.com/spring-projects/spring-ai"
+    links:
+      - github: "https://github.com/spring-projects/spring-ai"
     licensing:
       - "open-source"
     tags:
       - alternative languages
       - RAG
       - agents
-    usefullinks:
+    logo: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/245px-Spring_Framework_Logo_2018.svg.png
 
   - name: "tiktoken"
     description: "Library integrating a tokenizer for OpenAI models. Can be used to monitor costs and usage manually"
-    link: "https://github.com/openai/tiktoken"
+    links:
+      - github: "https://github.com/openai/tiktoken"
     licensing:
       - "open-source"
     tags:
       - observability
-    usefullinks:
+    logo:
 
   - name: "Weights & Biases (W&B)"
     description: "Platform dedicated to experiment tracking, model training, fine-tuning, and collaboration, with solutions to help LLM application development"
-    link: "https://wandb.ai"
-    licensing: 
-    - "freemium"
+    links:
+      - website: "https://wandb.ai"
+    licensing:
+      - "commercial"
     tags:
       - platform
       - LLMOps
-    usefullinks:
+    logo: https://raw.githubusercontent.com/wandb/assets/main/wandb-logo-yellow-dots-black-wb.svg
 
   - name: "Weaviate"
     description: "Provides an open source vector database, and cloud-based managed deployment."
-    link: "https://www.semi.technology/products/weaviate"
-    licensing: 
+    links:
+      - website: "https://www.semi.technology/products/weaviate"
+    licensing:
       - "open-source"
       - commercial
     tags:
       - data storage
       - RAG
-    usefullinks:
+    logo: https://weaviate.io/img/site/weaviate-logo-light.png
 
   - name: "Pinecone"
     description: "Managed vector database"
-    link: "https://www.pinecone.io"
-    licensing: 
+    links:
+      - website: "https://www.pinecone.io"
+    licensing:
       - commercial
     tags:
       - data storage
       - RAG
-    usefullinks:
+    logo: 
+
+  - name: "CrewAI"
+    description: "Framework for orchestrating autonomous AI Agents"
+    links:
+      - github: "https://github.com/crewAIInc/crewAI"
+      - website: "https://www.crewai.com"
+    licensing:
+      - "open-source"
+      - commercial
+    tags:
+      - agents
+      - platform
+    logo:
+
+  - name: "Semantic Kernel"
+    description: "SDK for integrating LLMs into applications"
+    links:
+      - github: "https://github.com/microsoft/semantic-kernel"
+      - documentation: "https://learn.microsoft.com/en-us/semantic-kernel/"
+    licensing:
+      - "open-source"
+    tags:
+      - agents
+      - RAG
+    
+
+  - name: ollama
+    description: "Lightweight, extensible framework for building and running language models on the local machine"
+    links:
+      - github: "https://github.com/ollama/ollama"
+      - website: "https://ollama.com"
+    licensing:
+      - "open-source"
+    tags:
+      - serving
+    logo: https://ollama.com/public/ollama.png
+
+  - name: "OpenAI platform"
+    description: "OpenAI provides an API for developers to access and use their models (GPT-4, DALL-E, ...)"
+    links:
+      - website: "platform.openai.com"
+    licensing:
+      - "commercial"
+    tags:
+      - serving
+    logo: https://openai.com/favicon.ico
+
+  - name: "Anthropic API"
+    description: "Anthropic provides an API for developers to access and use their models (Claude, ...)"
+    links:
+      - website: "https://www.anthropic.com/api"
+    licensing:
+      - "commercial"
+    tags:
+      - serving
+    logo: https://www.anthropic.com/favicon.ico
+
+  - name: "GoogleAI"
+    description: "Google provides an API for developers to access and use their models (Gemini, Gemma ...)"
+    links:
+      - website: "https://ai.google.dev/"
+    licensing:
+      - "commercial"
+    tags:
+      - serving
+    logo: 
+  
+  - name: "together.ai"
+    description: "Manage and run AI models"
+    links:
+      - website: "https://together.ai"
+    licensing:
+      - "commercial"
+    tags:
+      - serving
+    logo:
+    
+  - name: "Chroma"
+    description: "AI application database"
+    links:
+      - website: "https://www.trychroma.com"
+      - github: "https://github.com/chroma-core/chroma"
+    licensing:
+      - "open-source"
+    tags:
+      - data storage
+    logo: https://www.trychroma.com/img/chroma.png
+    
+

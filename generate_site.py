@@ -29,6 +29,7 @@ def main():
     generate_html(resources)
     # Copy the styles file to the dist directory
     shutil.copy('styles.css', 'dist/styles.css')
+    shutil.copytree('scripts', 'dist/scripts/', dirs_exist_ok=True)
 
 if __name__ == '__main__':
     main()

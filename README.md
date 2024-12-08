@@ -26,9 +26,9 @@ We welcome contributions! To add or update resources:
 Each resource should include:
 - Name
 - Description
-- Link
+- Links
 - Tags
-- Useful resources (optional)
+- Logo
 
 
 ### Pull Request Process
