@@ -26,9 +26,9 @@ We welcome contributions! To add or update resources:
 Each resource should include:
 - Name
 - Description
-- Links
+- Links (website, github...)
 - Tags
-- Logo
+- Logo (preferably a file in logos/)
 
 
 ### Pull Request Process

@@ -8,7 +8,7 @@ resources:
       - "open-source"
     tags:
       - agents
-    logo: https://microsoft.github.io/autogen/0.2/img/ag.svg
+    logo: logos/autogen.svg
 
   - name: "AutoGPT"
     description: "Open source AI agent project. Given a goal, the agent will decompose it into actionable subtasks and utilize given resources to accomplish them"
@@ -105,7 +105,7 @@ resources:
     licensing:
       - "open-source"
     tags:
-      - observability
+      - observability/evaluation
       - LLMOps
     logo: https://langfuse.com/langfuse_logo.png
 
@@ -116,7 +116,7 @@ resources:
     licensing:
       - "commercial"
     tags:
-      - observability
+      - observability/evaluation
       - platform
       - LLMOps
     logo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRejzbKjev2a8d-EKtUU06p84fh5NX_S7dDLA&s
@@ -170,7 +170,7 @@ resources:
     licensing:
       - "open-source"
     tags:
-      - observability
+      - observability/evaluation
     logo: https://openai.com/favicon.ico
 
   - name: "promptfoo"
@@ -181,7 +181,7 @@ resources:
       - "open-source"
     tags:
       - prompt engineering
-      - observability
+      - observability/evaluation
     logo: https://www.promptfoo.dev/favicon.ico
 
   - name: "Ragas"
@@ -192,7 +192,7 @@ resources:
       - "open-source"
     tags:
       - RAG
-      - observability
+      - observability/evaluation
     logo: https://docs.ragas.io/en/stable/_static/imgs/ragas-logo.png
 
   - name: "SpringAI"
@@ -214,7 +214,7 @@ resources:
     licensing:
       - "open-source"
     tags:
-      - observability
+      - observability/evaluation
     logo:
 
   - name: "Weights & Biases (W&B)"
@@ -236,7 +236,7 @@ resources:
       - "open-source"
       - commercial
     tags:
-      - data storage
+      - data search and storage
       - RAG
     logo: https://weaviate.io/img/site/weaviate-logo-light.png
 
@@ -247,9 +247,9 @@ resources:
     licensing:
       - commercial
     tags:
-      - data storage
+      - data search and storage
       - RAG
-    logo: 
+    logo:
 
   - name: "CrewAI"
     description: "Framework for orchestrating autonomous AI Agents"
@@ -274,7 +274,6 @@ resources:
     tags:
       - agents
       - RAG
-    
 
   - name: ollama
     description: "Lightweight, extensible framework for building and running language models on the local machine"
@@ -315,8 +314,8 @@ resources:
       - "commercial"
     tags:
       - serving
-    logo: 
-  
+    logo:
+
   - name: "together.ai"
     description: "Manage and run AI models"
     links:
@@ -325,8 +324,9 @@ resources:
       - "commercial"
     tags:
       - serving
+      - fine-tuning
     logo:
-    
+
   - name: "Chroma"
     description: "AI application database"
     links:
@@ -335,7 +335,135 @@ resources:
     licensing:
       - "open-source"
     tags:
-      - data storage
+      - data search and storage
     logo: https://www.trychroma.com/img/chroma.png
-    
 
+  - name: "Giskard"
+    description: "Evaluation and testing framework. Also provides a testing two commercial products: LLM evaluation hub and AI compliance hub"
+    links:
+      - website: "https://www.giskard.ai"
+      - github: "https://github.com/Giskard-AI/giskard"
+    licensing:
+      - "open-source"
+      - "commercial"
+    tags:
+      - observability/evaluation
+      - guardrails/security
+    logo: logos/giskard.svg
+
+  - name: "braintrust"
+    description: "End-to-end platform for building AI applications, including iterative experimentation, evluations, real-time monitoring, and data management"
+    links:
+      - website: "https://www.braintrust.dev/"
+    licensing:
+      - "commercial"
+    tags:
+      - platform
+    logo: logos/braintrust.svg
+
+  - name: "Humanloop"
+    description: "Humanloop provides a platform for data labeling and model evaluation"
+    links:
+      - website: "https://humanloop.com/"
+    licensing:
+      - "commercial"
+    tags:
+      - observability/evaluation
+    logo: logos/humanloop.svg
+  
+  - name: "ell"
+    description: "A lightweight prompt engineering library treating prompts as functions"
+    links:
+      - website: "https://docs.ell.so/"
+      - github: "https://github.com/madcowd/ell"
+    licensing:
+      - "open-source"
+    tags:
+      - prompt engineering
+    logo: logos/ell.png
+
+  - name: "PydanticAI"
+    description: "Python agent framework"
+    links:
+      - website: https://ai.pydantic.dev/
+      - github: https://github.com/pydantic/pydantic-ai
+    licensing:
+      - "open-source"
+    tags:
+      - agents
+    logo: logos/pydanticai.svg
+
+  - name: "Qdrant"
+    description: "Vector similarity search engine and vector database, open-source or fully managed with Qdrant Cloud"
+    links:
+      - website: "https://qdrant.tech/"
+      - github: "https://github.com/qdrant/qdrant"
+    licensing:
+      - "open-source"
+      - "commercial"
+    tags:
+      - data search and storage
+    logo: logos/qdrant.svg
+    
+  - name: "pgvector"
+    description: "Open-source vector similarity search for Postgres"
+    links:
+      - github: "https://github.com/pgvector/pgvector"
+    licensing:
+      - "open-source"
+    tags:
+      - data search and storage
+
+  - name: "OpenAI Swarm"
+    description: Educational framework exploring ergonomic, lightweight multi-agent orchestration
+    links:
+      - github: "https://github.com/openai/swarm"
+    licensing:
+      - "open-source"
+    tags:
+      - agents
+    logo: logos/swarm.png
+
+  - name: "unsloth"
+    description: "Tool to fine-tune LLMs faster and more efficiently"
+    links:
+      - website: "https://unsloth.ai/"
+      - github: "https://github.com/unslothai/unsloth"
+    licensing:
+      - "open-source"
+      - "commercial"
+    tags:
+      - fine-tuning
+
+  - name: "axolotl"
+    description: "Library designed to streamline the fine-tuning of various AI models"
+    links:
+      - github: "https://github.com/axolotl-ai-cloud/axolotl"
+    licensing:
+      - "open-source"
+    tags:
+      - fine-tuning
+    logo: logos/axolotl.svg
+  
+  - name: "Lightning"
+    description: "Platform to train models, deploy, and more."
+    links:
+      - website: "https://www.lightning.ai/"
+    licensing:
+      - "commercial"
+    tags:
+      - platform
+      - serving
+      - fine-tuning
+    logo: logos/lightning.png
+
+  - name: "AgentOps"
+    description: "Developer platform to test and debug AI agents"
+    links:
+      - website: "https://www.agentops.ai/"
+    licensing:
+      - "commercial"
+    tags:
+      - agents
+      - platform
+    logo: logos/agentops.svg

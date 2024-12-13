@@ -28,8 +28,8 @@ function renderResources(filteredResources) {
 
         // Licensing
         const licensingCell = document.createElement('td');
-        const licensingBadge = document.createElement('span');
         resource.licensing.forEach(licensing => {
+            const licensingBadge = document.createElement('span');
             licensingBadge.className = `badge licensing-badge licensing-${licensing.toLowerCase().replace(' ', '-')}`;
             licensingBadge.textContent = licensing;
             licensingCell.appendChild(licensingBadge);

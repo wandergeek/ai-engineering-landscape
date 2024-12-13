@@ -48,10 +48,11 @@ function renderResourceLandscape(resources) {
                 logo.alt = resource.name;
                 logo.className = 'logo';
                 resourceLink.appendChild(logo);
-                // If logo link is broken
-                logo.onerror = function () {
-                    logo.src = '';
-                }
+                logo.onerror = () => {
+                    console.error('Logo not found:', resource.logo);
+                    resourceLink.removeChild(logo);
+                    resourceLink.textContent = resource.name;
+                };
             }
             // Use name if no logo
             else {

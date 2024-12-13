@@ -11,6 +11,10 @@
 
 <body>
     <div class="container-fluid mt-5">
+        <!-- Generation Date Badge -->
+        <div class="generation-date">
+            Last generated on: {{ generation_date.strftime('%Y-%m-%d') }}
+        </div>
         <div class="sticky mb-3">
             <h1 class="mb-4 text-center">AI Engineering Landscape</h1>
 
@@ -63,16 +67,16 @@
             <div class="col-md-12 text-center">
                 <p> or contact me directly:</p>
                 <form action="https://formspree.io/mpzgrwap" method="POST">
-                    <label>
-                        Your email:
-                        <input type="email" name="email" />
-                    </label>
-
-                    <label>
-                        Your message:
-                        <textarea name="message"></textarea>
-                    </label>
-                    <button type="submit">Send</button>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="Your email or name"></input>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" placeholder="Your message" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="_subject" value="New message from AI Engineering Landscape">
+                        <button type="submit" class="btn btn-sm btn-secondary btn-block">Send</button>
+                    </div>
                 </form>
             </div>
         </div>
