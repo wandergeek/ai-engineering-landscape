@@ -446,7 +446,7 @@ resources:
     logo: logos/axolotl.svg
   
   - name: "Lightning"
-    description: "Platform to train models, deploy, and more."
+    description: "Platform to train models, deploy, and more"
     links:
       - website: "https://www.lightning.ai/"
     licensing:
@@ -469,19 +469,22 @@ resources:
     logo: logos/agentops.svg
 
   - name: "Phoenix"
-    description: "Phoenix is an open-source AI observability platform designed for experimentation, evaluation, and troubleshooting."
+    description: "Open-source AI observability platform designed for experimentation, evaluation, and troubleshooting. Commercial hosting available"
     links:
-      - website: "https://github.com/Arize-ai/phoenix"
+      - website: https://phoenix.arize.com/
+      - github: https://github.com/Arize-ai/phoenix
     licensing:
       - "open-source"
+      - "commercial"
     tags:
       - observability/evaluation
     logo: logos/phoenix.png
 
   - name: "Langtrace"
-    description: "Langtrace is an open source observability software which lets you capture, debug and analyze traces and metrics from all your applications that leverages LLM APIs, Vector Databases and LLM based Frameworks."
+    description: "Open-source observability software which lets you capture, debug and analyze traces and metrics. Includes an SDK and a dashboard, with a commercial offering"
     links:
-      - website: "https://github.com/Scale3-Labs/langtrace"
+      - website: https://www.langtrace.ai/
+      - github: "https://github.com/Scale3-Labs/langtrace"
     licensing:
       - "open-source"
       - "commercial"
