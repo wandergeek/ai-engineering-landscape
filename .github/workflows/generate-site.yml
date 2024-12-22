@@ -29,6 +29,8 @@ jobs:
 
       - name: Generate HTML
         run: python generate_site.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
