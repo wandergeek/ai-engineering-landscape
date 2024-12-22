@@ -32,7 +32,7 @@ resources:
     logo: https://github.com/stanfordnlp/dspy/raw/main/docs/docs/static/img/dspy_logo.png
 
   - name: "Epsilla"
-    description: "An all-in-one platform to create vertical LLM agents powered by your private data and knowledge"
+    description: "An all-in-one platform to create vertical AI agents powered by your private data and knowledge"
     links:
       - website: "https://epsilla.com"
       - github: "https://github.com/epsilla-cloud/vectordb"
@@ -42,6 +42,8 @@ resources:
     tags:
       - data search and storage
       - RAG
+      - agents
+      - platform
     logo: logos/epsilla.png
     
   - name: "Guardrails AI"
