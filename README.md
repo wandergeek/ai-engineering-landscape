@@ -47,7 +47,7 @@ Each resource should include:
 ## Local Development
 
 1. Ensure Python 3.9+ is installed
-2. Install dependencies: `pip install pyyaml jinja2`
+2. Install dependencies: `pip install pyyaml jinja2 requests python-dotenv`
 3. Run site generation: `python generate_site.py`
 
 ## Code of Conduct

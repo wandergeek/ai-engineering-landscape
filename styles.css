@@ -200,3 +200,11 @@ button {
     width: 100%;
   }
 }
+
+
+.contributor-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}

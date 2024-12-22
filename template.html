@@ -59,9 +59,25 @@
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-12 text-center">
-                <p> Contribute to this project on GitHub <a
-                        href="https://github.com/malywut/ai-engineering-landscape">here</a></p>
-            </div>
+                <p> Original list from <a
+                        href="https://www.amazon.com/Developing-Apps-GPT-4-ChatGPT-Intelligent-dp-1098168100/dp/1098168100/">Developing
+                        Apps with GPT-4 and ChatGPT</a> by Olivier Caelen and Marie-Alice Blete (O'Reilly).</p>
+             </div>
+        </div>
+        <!-- Contributors Section -->
+        <div class="col-md-12 text-center">
+            <a href="https://www.github.com/{{ repo_owner }}/{{ repo_name }}">Join</a> the contributor list: 
+           
+            {% for contributor in contributors %}
+            <a href="{{ contributor.profile_url }}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="{{ contributor.username }}">
+                <img src="{{ contributor.avatar_url }}" 
+                     alt="{{ contributor.username }}" 
+                     class="contributor-avatar">
+            </a>
+            {% endfor %}
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
