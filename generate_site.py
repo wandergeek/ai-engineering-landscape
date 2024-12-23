@@ -14,6 +14,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from PIL import Image
 from pathlib import Path
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 def generate_webpage_screenshot(html_path):
@@ -37,24 +39,32 @@ def generate_webpage_screenshot(html_path):
         file_url = f"file://{os.path.abspath(html_path)}"
         driver.get(file_url)
 
-        # Wait for the element to be fully rendered
-        driver.implicitly_wait(4)
-
-        # Get element dimensions with JavaScript
-        dimensions = driver.execute_script(
-            """
+       # Wait for element to be visible and have dimensions
+        wait = WebDriverWait(driver, 10)
+        element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'landscape-container')))
+        
+        # Force element to have minimum dimensions
+        driver.execute_script("""
+            const element = document.querySelector('.landscape-container');
+            element.style.minHeight = '200px';
+            element.style.minWidth = '600px';
+            element.style.display = 'block';
+        """)
+        
+        # Add small delay for rendering
+        driver.implicitly_wait(2)
+        
+        dimensions = driver.execute_script("""
             const element = document.querySelector('.landscape-container');
             const rect = element.getBoundingClientRect();
             return {
-                left: rect.left,
+                left: Math.max(0, rect.left),
                 top: rect.top,
                 width: rect.width,
                 height: rect.height,
                 devicePixelRatio: window.devicePixelRatio
             };
-        """
-        )
-        print(f"Element dimensions: {dimensions}")
+        """)
 
         # Take full page screenshot
         driver.save_screenshot("temp_screenshot.png")
