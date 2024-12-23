@@ -159,7 +159,6 @@ def main():
     shutil.copy("styles.css", "dist/styles.css")
     shutil.copytree("scripts", "dist/scripts/", dirs_exist_ok=True)
     shutil.copytree("logos", "dist/logos/", dirs_exist_ok=True)
-    shutil.copytree("img", "dist/img", dirs_exist_ok=True)
 
 if __name__ == "__main__":
     main()
