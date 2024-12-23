@@ -250,7 +250,7 @@ resources:
     tags:
       - data search and storage
       - RAG
-    logo:
+    logo: logos/pinecone.jpg
 
   - name: "CrewAI"
     description: "Framework for orchestrating autonomous AI Agents"
@@ -263,7 +263,7 @@ resources:
     tags:
       - agents
       - platform
-    logo:
+    logo: logos/crewai.png
 
   - name: "Semantic Kernel"
     description: "SDK for integrating LLMs into applications"

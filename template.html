@@ -11,10 +11,20 @@
 </head>
 
 <body>
-    <div class="container-fluid mt-5">
-        <!-- Generation Date Badge -->
-        <div class="generation-date">
-            Last generated on: {{ generation_date.strftime('%Y-%m-%d') }}
+    <div class="">
+        <div class="row justify-content-end">
+            <div class="col ml-auto">
+                <!-- Generation Date Badge -->
+                <span class="badge bg-secondary">
+                    Last generated on: {{ generation_date.strftime('%Y-%m-%d') }}
+                </span>
+                <!-- Download Button -->
+                <div class="mr-auto">
+                    <a href="img/ai_engineering_landscape.png" class="btn btn-secondary btn-sm" download>
+                        <i class="bi bi-download"></i> Download landscape as image
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="sticky mb-3">
             <h1 class="mb-4 text-center">AI Engineering Landscape</h1>
@@ -63,20 +73,16 @@
                 <p> Original list from <a
                         href="https://www.amazon.com/Developing-Apps-GPT-4-ChatGPT-Intelligent-dp-1098168100/dp/1098168100/">Developing
                         Apps with GPT-4 and ChatGPT</a> by Olivier Caelen and Marie-Alice Blete (O'Reilly).</p>
-             </div>
+            </div>
         </div>
         <!-- Contributors Section -->
         <div class="col-md-12 text-center">
-            <a href="https://www.github.com/{{ repo_owner }}/{{ repo_name }}">Join</a> the contributor list: 
-           
+            <a href="https://www.github.com/{{ repo_owner }}/{{ repo_name }}">Join</a> the contributor list:
+
             {% for contributor in contributors %}
-            <a href="{{ contributor.profile_url }}" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               title="{{ contributor.username }}">
-                <img src="{{ contributor.avatar_url }}" 
-                     alt="{{ contributor.username }}" 
-                     class="contributor-avatar">
+            <a href="{{ contributor.profile_url }}" target="_blank" rel="noopener noreferrer"
+                title="{{ contributor.username }}">
+                <img src="{{ contributor.avatar_url }}" alt="{{ contributor.username }}" class="contributor-avatar">
             </a>
             {% endfor %}
         </div>
