@@ -23,6 +23,10 @@ def generate_webpage_screenshot(html_path):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--force-device-scale-factor=1")
+    chrome_options.binary_location = "/usr/bin/google-chrome"  # Specify Chrome binary
+
+    print("Starting screenshot process...")
+    print(f"Chrome version: {driver.capabilities['browserVersion']}")
 
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -50,6 +54,7 @@ def generate_webpage_screenshot(html_path):
             };
         """
         )
+        print(f"Element dimensions: {dimensions}")
 
         # Take full page screenshot
         driver.save_screenshot("temp_screenshot.png")
