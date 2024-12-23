@@ -72,7 +72,8 @@ resources:
     tags:
       - alternative languages
       - RAG
-    logo: https://avatars.githubusercontent.com/u/132277850?v=4
+      - agents
+    logo: logos/langchain4j.png
 
   - name: "LangGraph"
     description: "Orchestration framework for complex agentic systems"
