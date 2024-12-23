@@ -26,10 +26,10 @@ def generate_webpage_screenshot(html_path):
     chrome_options.binary_location = "/usr/bin/google-chrome"  # Specify Chrome binary
 
     print("Starting screenshot process...")
-    print(f"Chrome version: {driver.capabilities['browserVersion']}")
 
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
+    print(f"Chrome version: {driver.capabilities['browserVersion']}")
 
     try:
         # Set a fixed window size
