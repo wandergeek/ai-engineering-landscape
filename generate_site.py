@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, time
 import yaml
 from jinja2 import Environment, FileSystemLoader
 import json
@@ -39,10 +39,25 @@ def generate_webpage_screenshot(html_path):
         file_url = f"file://{os.path.abspath(html_path)}"
         driver.get(file_url)
 
+         # Wait for initial page load
+        WebDriverWait(driver, 10).until(
+            lambda d: d.execute_script("return document.readyState") == "complete"
+        )
+        
+        # Wait for JS to load
+        WebDriverWait(driver, 10).until(
+            lambda d: d.execute_script("""
+                return typeof resources !== 'undefined' && 
+                        document.querySelector('script[src="scripts/landscape.js"]') !== null
+            """)
+        )
+       
+        # Additional wait for landscape.js execution
+        time.sleep(2)
+    
         # Wait for element to be visible and have dimensions
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'landscape-container')))
-        wait.until(EC.visibility_of(element))
 
         # Print the number of sub elements
         print(f"Number of sub elements: {len(element.find_elements(By.CSS_SELECTOR, '*'))}")
