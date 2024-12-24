@@ -1,4 +1,5 @@
-from datetime import datetime, time
+from datetime import datetime
+import time
 import yaml
 from jinja2 import Environment, FileSystemLoader
 import json
