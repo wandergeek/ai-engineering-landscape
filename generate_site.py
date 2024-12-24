@@ -39,17 +39,13 @@ def generate_webpage_screenshot(html_path):
         file_url = f"file://{os.path.abspath(html_path)}"
         driver.get(file_url)
 
-       # Wait for element to be visible and have dimensions
+        # Wait for element to be visible and have dimensions
         wait = WebDriverWait(driver, 10)
         element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'landscape-container')))
-        
-        # Force element to have minimum dimensions
-        driver.execute_script("""
-            const element = document.querySelector('.landscape-container');
-            element.style.minHeight = '200px';
-            element.style.minWidth = '600px';
-            element.style.display = 'block';
-        """)
+        wait.until(EC.visibility_of(element))
+
+        # Print the number of sub elements
+        print(f"Number of sub elements: {len(element.find_elements(By.CSS_SELECTOR, '*'))}")
         
         # Add small delay for rendering
         driver.implicitly_wait(2)
@@ -66,6 +62,8 @@ def generate_webpage_screenshot(html_path):
             };
         """)
 
+        print(f"Element dimensions: {dimensions}")
+
         # Take full page screenshot
         driver.save_screenshot("temp_screenshot.png")
         im = Image.open("temp_screenshot.png")
@@ -81,6 +79,8 @@ def generate_webpage_screenshot(html_path):
         im = im.crop((left, top, right, bottom))
         Path("dist/img").mkdir(parents=True, exist_ok=True)
         im.save("dist/img/ai_engineering_landscape.png")
+
+        print("Screenshot cropped and saved successfully!")
 
         # Remove the temporary screenshot
         os.remove("temp_screenshot.png")
