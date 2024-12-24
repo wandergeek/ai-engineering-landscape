@@ -1,5 +1,4 @@
 from datetime import datetime
-import time
 import yaml
 from jinja2 import Environment, FileSystemLoader
 import json
@@ -40,7 +39,7 @@ def generate_webpage_screenshot(html_path):
         file_url = f"file://{os.path.abspath(html_path)}"
         driver.get(file_url)
 
-         # Wait for initial page load
+        # Wait for initial page load
         WebDriverWait(driver, 10).until(
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
@@ -52,9 +51,6 @@ def generate_webpage_screenshot(html_path):
                         document.querySelector('script[src="scripts/landscape.js"]') !== null
             """)
         )
-       
-        # Additional wait for landscape.js execution
-        time.sleep(2)
     
         # Wait for element to be visible and have dimensions
         wait = WebDriverWait(driver, 10)
@@ -62,9 +58,6 @@ def generate_webpage_screenshot(html_path):
 
         # Print the number of sub elements
         print(f"Number of sub elements: {len(element.find_elements(By.CSS_SELECTOR, '*'))}")
-        
-        # Add small delay for rendering
-        driver.implicitly_wait(2)
         
         dimensions = driver.execute_script("""
             const element = document.querySelector('.landscape-container');
@@ -92,7 +85,7 @@ def generate_webpage_screenshot(html_path):
         bottom = int((dimensions["top"] + dimensions["height"]) * dpr) + 5
 
         # Crop the image
-        # im = im.crop((left, top, right, bottom))
+        im = im.crop((left, top, right, bottom))
         Path("dist/img").mkdir(parents=True, exist_ok=True)
         im.save("dist/img/ai_engineering_landscape.png")
 
