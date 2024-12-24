@@ -185,11 +185,12 @@ def main():
 
     os.makedirs("dist", exist_ok=True)
     resources = load_resources()
-    generate_html(resources)
-    # Copy the styles file to the dist directory
+  
     shutil.copy("styles.css", "dist/styles.css")
     shutil.copytree("scripts", "dist/scripts/", dirs_exist_ok=True)
     shutil.copytree("logos", "dist/logos/", dirs_exist_ok=True)
+
+    generate_html(resources)
 
 if __name__ == "__main__":
     main()
