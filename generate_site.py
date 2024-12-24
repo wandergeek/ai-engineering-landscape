@@ -76,7 +76,7 @@ def generate_webpage_screenshot(html_path):
         bottom = int((dimensions["top"] + dimensions["height"]) * dpr) + 5
 
         # Crop the image
-        im = im.crop((left, top, right, bottom))
+        # im = im.crop((left, top, right, bottom))
         Path("dist/img").mkdir(parents=True, exist_ok=True)
         im.save("dist/img/ai_engineering_landscape.png")
 
