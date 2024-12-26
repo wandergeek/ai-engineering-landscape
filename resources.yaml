@@ -44,7 +44,7 @@ resources:
       - RAG
       - agents
       - platform
-    logo: logos/epsilla.png
+    logo: logos/epsilla.svg
     
   - name: "Guardrails AI"
     description: "Framework to run input and output guards in your application that detect, quantify, and mitigate the presence of specific types of risks"
