@@ -25,7 +25,6 @@ def generate_webpage_screenshot(html_path):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--force-device-scale-factor=1")
-    chrome_options.binary_location = "/usr/bin/google-chrome"  # Specify Chrome binary
 
     print("Starting screenshot process...")
 
@@ -43,23 +42,30 @@ def generate_webpage_screenshot(html_path):
         WebDriverWait(driver, 10).until(
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
-        
+
         # Wait for JS to load
         WebDriverWait(driver, 10).until(
-            lambda d: d.execute_script("""
+            lambda d: d.execute_script(
+                """
                 return typeof resources !== 'undefined' && 
                         document.querySelector('script[src="scripts/landscape.js"]') !== null
-            """)
+            """
+            )
         )
-    
+
         # Wait for element to be visible and have dimensions
         wait = WebDriverWait(driver, 10)
-        element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'landscape-container')))
+        element = wait.until(
+            EC.presence_of_element_located((By.CLASS_NAME, "landscape-container"))
+        )
 
         # Print the number of sub elements
-        print(f"Number of sub elements: {len(element.find_elements(By.CSS_SELECTOR, '*'))}")
-        
-        dimensions = driver.execute_script("""
+        print(
+            f"Number of sub elements: {len(element.find_elements(By.CSS_SELECTOR, '*'))}"
+        )
+
+        dimensions = driver.execute_script(
+            """
             const element = document.querySelector('.landscape-container');
             const rect = element.getBoundingClientRect();
             return {
@@ -69,7 +75,8 @@ def generate_webpage_screenshot(html_path):
                 height: rect.height,
                 devicePixelRatio: window.devicePixelRatio
             };
-        """)
+        """
+        )
 
         print(f"Element dimensions: {dimensions}")
 
@@ -142,6 +149,30 @@ def load_resources():
         return yaml.safe_load(file)["resources"]
 
 
+def generate_sitemap():
+    timestamp = datetime.now().strftime("%Y-%m-%d")
+    screenshot_path = "img/ai_engineering_landscape.png"
+    owner, repo = get_repo_info_from_github_env()
+    url = f"https://{owner}.github.io/{repo}"
+
+    sitemap_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+   <url>
+       <loc>{url}</loc>
+       <lastmod>{timestamp}</lastmod>
+       <image:image>
+           <image:loc>{url}/{screenshot_path}</image:loc>
+           <image:title>AI Engineering Landscape</image:title>
+           <image:caption>AI Engineering Landscape</image:caption>
+       </image:image>
+   </url>
+</urlset>"""
+
+    with open("dist/sitemap.xml", "w") as f:
+        f.write(sitemap_content)
+
+
 def generate_html(resources):
     # Prepare Jinja2 environment
     env = Environment(loader=FileSystemLoader("."))
@@ -171,6 +202,9 @@ def generate_html(resources):
     # Generate a screenshot of the webpage
     generate_webpage_screenshot(html_path=html_path)
 
+    # Generate sitemap
+    generate_sitemap()
+
 
 def main():
     import os
@@ -178,12 +212,13 @@ def main():
 
     os.makedirs("dist", exist_ok=True)
     resources = load_resources()
-  
+
     shutil.copy("styles.css", "dist/styles.css")
     shutil.copytree("scripts", "dist/scripts/", dirs_exist_ok=True)
     shutil.copytree("logos", "dist/logos/", dirs_exist_ok=True)
 
     generate_html(resources)
+
 
 if __name__ == "__main__":
     main()
