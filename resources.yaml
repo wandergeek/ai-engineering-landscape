@@ -507,3 +507,14 @@ resources:
     tags:
       - observability/evaluation
     logo: logos/langtrace.png
+
+  - name: "OVHcloud AI Endpoints"
+    description: "OVHcloud provides an API for developers to access and use managed Open Source models or personal models"
+    links:
+      - website: "https://endpoints.ai.cloud.ovh.net/"
+      - github: "https://github.com/ovh"
+    licensing:
+      - "commercial"
+    tags:
+      - serving
+    logo:  logos/ovhcloud.png
