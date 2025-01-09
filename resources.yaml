@@ -512,6 +512,7 @@ resources:
     description: "OVHcloud provides an API for developers to access and use managed Open Source models or personal models"
     links:
       - website: "https://endpoints.ai.cloud.ovh.net/"
+      - github: "https://github.com/ovh"
     licensing:
       - "commercial"
     tags:
