@@ -518,3 +518,14 @@ resources:
     tags:
       - serving
     logo:  logos/ovhcloud.png
+
+  - name: "SplxAI"
+    description: "A lightweight solution for automated red teaming of GenAI and LLM apps, with multi-modal attack variations and fully customizable risk assessments, and dynamic risk remediation through automated hardening of system prompts"
+    links:
+      - website: "https://splx.ai"
+    licensing:
+      - "commercial"
+    tags:
+      - observability/evaluation
+      - guardrails/security
+    logo: logos/splxai.svg
