@@ -529,3 +529,28 @@ resources:
       - observability/evaluation
       - guardrails/security
     logo: logos/splxai.svg
+
+  - name: "smolagents"
+    description: "a very simple library that unlocks agentic capabilities for language models"
+    links:
+      - github: https://github.com/huggingface/smolagents
+      - website: https://huggingface.co/blog/smolagents
+    licensing:
+      - "open-source"
+    tags:
+      - agents
+    logo: logos/smolagents.png
+
+  - name: Arch
+    description: >-
+      An intelligent Layer 7 gateway designed to protect, observe, and personalize AI agents with your APIs.
+      built on (and by the core contributors of) Envoy Proxy with the belief that: 
+      'Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests.'
+    links:
+      - github: "https://github.com/katanemo/archgw"
+    licensing:
+      - "open-source"
+    tags:
+      - observability/evaluation
+      - guardrails/security
+    logo: logos/arch.png
