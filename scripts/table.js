@@ -77,12 +77,31 @@ function renderResources(filteredResources) {
                 } else {
                     console.log('Fetching from API');
                     fetch(githubApiUrl)
-                        .then(response => response.json())
+                        .then(response => {
+                            if (!response.ok) {
+                                if (cachedResponse) {
+                                    //Unable to fetch data from GitHub API, fallback to cached data
+                                    return JSON.parse(cachedResponse).data;
+                                    
+                                }
+                                // Unable to fetch cached data fallback to default
+                                
+                            } else {
+                                data = response.json();
+                                // Cache the response
+                                localStorage.setItem(cacheKey, JSON.stringify({ data, cachedAt: Date.now() }));
+                                return data;
+                            }
+                            
+                        })
                         .then(data => {
                             const stars = data.stargazers_count;
                             // Convert count to smaller format
                             generateGithubPage(stars, popularityCell);
-                            localStorage.setItem(cacheKey, JSON.stringify({ data, cachedAt: Date.now() }));
+                            
+                        })
+                        .catch(error => {
+                            console.error(error);
                         });
                 }
             }

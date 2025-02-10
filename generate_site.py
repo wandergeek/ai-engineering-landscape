@@ -113,6 +113,23 @@ def get_repo_info_from_github_env():
         return owner, repo
     return None, None
 
+def initialize_github_stars(resource, token=None):
+    if (resource.links and 'github' in resource.links):
+        githubLink = resource.links.get('github');
+        if githubLink:
+            githubRepo = githubLink.split('/').pop();
+            githubApiUrl = f'https://api.github.com/repos/{githubRepo}';
+            headers = {"Accept": "application/vnd.github.v3+json"}
+            if token:
+                headers["Authorization"] = f"Bearer {token}"
+            response = requests.get(githubApiUrl, headers=headers);
+            if response.status_code == 200:
+                resource.stars = response.json().get("stargazers_count", 0);
+            else : 
+                print(f"Failed to fetch stars for {resource.link}");
+            
+
+
 
 def get_github_contributors(token=None):
     owner, repo = get_repo_info_from_github_env()
@@ -183,6 +200,16 @@ def generate_html(resources):
 
     # Get contributors
     contributors = get_github_contributors(token=os.environ.get("GITHUB_TOKEN"))
+
+    # Get all github stars and store them as backup
+    for resource in resources:
+        if "github" in resource.get("links", {}):
+            response = requests.get(resource.get("links").get("github"))
+            if response.status_code == 200:
+                resource.stars = response.json().get("stargazers_count", 0)
+            else:
+                print(f"Failed to fetch stars for {resource.link}")
+
 
     # Render the template
     html_output = template.render(
