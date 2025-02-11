@@ -80,25 +80,23 @@ function renderResources(filteredResources) {
                         .then(response => {
                             if (!response.ok) {
                                 if (cachedResponse) {
+                                    console.log('API call failed, using cached response');
                                     //Unable to fetch data from GitHub API, fallback to cached data
-                                    return JSON.parse(cachedResponse).data;
-                                    
+                                    return JSON.parse(cachedResponse).data.stargazers_count;
                                 }
                                 // Unable to fetch cached data fallback to default
-                                
+                                console.log('API call failed, using default');
+                                return resource.stars
                             } else {
                                 data = response.json();
                                 // Cache the response
                                 localStorage.setItem(cacheKey, JSON.stringify({ data, cachedAt: Date.now() }));
-                                return data;
+                                return data.stargazers_count;
                             }
-                            
                         })
-                        .then(data => {
-                            const stars = data.stargazers_count;
+                        .then(stars => {
                             // Convert count to smaller format
                             generateGithubPage(stars, popularityCell);
-                            
                         })
                         .catch(error => {
                             console.error(error);
@@ -142,15 +140,38 @@ function sortTable(columnIndex) {
     const isAscending = tbody.dataset.sortColumn !== columnIndex.toString();
 
     rows.sort((a, b) => {
-        const aValue = a.cells[columnIndex].textContent;
-        const bValue = b.cells[columnIndex].textContent;
+        const aValue = parseValue(a.cells[columnIndex].textContent);
+        const bValue = parseValue(b.cells[columnIndex].textContent);
+        
+        // If both values are numbers, do numeric comparison
+        if (typeof aValue === 'number' && typeof bValue === 'number') {
+            return isAscending ? aValue - bValue : bValue - aValue;
+        }
+        
+        // Otherwise, do string comparison
         return isAscending
-            ? aValue.localeCompare(bValue)
-            : bValue.localeCompare(aValue);
+            ? String(aValue).localeCompare(String(bValue))
+            : String(bValue).localeCompare(String(aValue));
     });
 
     tbody.innerHTML = '';
     rows.forEach(row => tbody.appendChild(row));
 
     tbody.dataset.sortColumn = columnIndex;
+}
+
+function parseValue(value) {
+    value = value.trim().toLowerCase();
+    let numericValue = parseFloat(value);
+    if (isNaN(numericValue)) {
+        return value; // Return original value for text sorting
+    }
+    
+    // Handle suffixes
+    if (value.endsWith('k')) {
+        numericValue = parseFloat(value.slice(0, -1)) * 1000;
+    } else if (value.endsWith('m')) {
+        numericValue = parseFloat(value.slice(0, -1)) * 1000000;
+    }
+    return numericValue;
 }
