@@ -530,7 +530,7 @@ resources:
     logo: logos/splxai.svg
 
   - name: "smolagents"
-    description: "a very simple library that unlocks agentic capabilities for language models"
+    description: "A very simple library that unlocks agentic capabilities for language models"
     links:
       - github: https://github.com/huggingface/smolagents
       - website: https://huggingface.co/blog/smolagents
@@ -553,3 +553,57 @@ resources:
       - observability/evaluation
       - guardrails/security
     logo: logos/arch.png
+
+  - name: "dify"
+    description: An open-source LLM app development platform, combines agentic AI workflow, RAG pipeline, agent capabilities, model management, observability features and more."
+    links:
+      - github: https://github.com/langgenius/dify
+      - website: https://dify.ai
+    licensing:
+      - "open-source"
+      - "commercial"
+    tags:
+      - agents
+      - RAG
+      - platform
+    logo: logos/dify.png
+  
+  - name: "vLLM"
+    description: "A fast and easy-to-use library for LLM inference and serving."
+    links:
+      - github: "https://github.com/vllm-project/vllm"
+    licensing:
+      - "open-source"
+    tags:
+      - serving
+    logo: logos/vllm.png
+
+  - name: "Letta"
+    description: "An open source framework for building build stateful agents with advanced reasoning capabilities and transparent long-term memory (formerly MemGPT)."
+    links:
+      - github: "https://github.com/letta-ai/letta"
+    licensing:
+      - "open-source"
+    tags:
+      - agents
+    logo: logos/letta.png
+
+  - name: "aisuite"
+    description: "A simple, unified interface to multiple Generative AI providers"
+    links:
+      - github: "https://github.com/andrewyng/aisuite"
+    licensing:
+      - "open-source"
+    tags:
+      - serving
+
+  - name: "Model Context Protocol (MCP)"
+    description: "An open protocol that enables seamless integration between LLM applications and external data sources and tools, provided by Anthropic"
+    links:
+      - website: "https://modelcontextprotocol.io/introduction"
+      - github: "https://github.com/modelcontextprotocol/python-sdk"
+    licensing:
+      - "open-source"
+    tags:
+      - agents
+    logo: logos/mcp.svg
