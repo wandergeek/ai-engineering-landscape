@@ -88,16 +88,15 @@ function renderResources(filteredResources) {
                                 console.log('API call failed, using default');
                                 return {stargazers_count : resource.stars}
                             } else {
-                                data = response.json();
-                                // Cache the response
-                                localStorage.setItem(cacheKey, JSON.stringify({ data, cachedAt: Date.now() }));
-                                return data;
+                                return response.json();
                             }
                         })
                         .then(data => {
                             const stars = data.stargazers_count;
                             // Convert count to smaller format
                             generateGithubPage(stars, popularityCell);
+                            // Cache the response
+                            localStorage.setItem(cacheKey, JSON.stringify({ data, cachedAt: Date.now() }));
                         })
                         .catch(error => {
                             console.error(error);
