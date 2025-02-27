@@ -31,6 +31,21 @@ resources:
       - RAG
     logo: https://github.com/stanfordnlp/dspy/raw/main/docs/docs/static/img/dspy_logo.png
 
+  - name: "elastic"
+    description: "Elasticsearch is the world's most widely deployed open source vector database"
+    links:
+      - website: "https://elastic.co"
+      - github: "https://github.com/elastic/elasticsearch"
+    licensing:
+      - "open-source"
+      - "commercial"
+    tags:
+      - data search and storage
+      - RAG
+      - platform
+      - observability/evaluation
+    logo: logos/elastic.svg
+
   - name: "Epsilla"
     description: "An all-in-one platform to create vertical AI agents powered by your private data and knowledge"
     links:
@@ -607,3 +622,4 @@ resources:
     tags:
       - agents
     logo: logos/mcp.svg
+    
